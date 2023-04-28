@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stopwatch {
+  width: 480px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(109, 109, 109);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.time-section {
+  padding: 2rem;
+  background-color: rgb(255, 174, 0);
+  border-radius: 2px;
+  text-align: center;
+}
+
+.time-section h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.btn-section {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.btn-section button {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  color: rgb(75, 80, 222);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-section button:active {
+  transform: scale(90%);
+}
+
+.lap-container {
+  background-color: #eee;
+  padding: 2rem 0.5rem 2rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.lap-section {
+  height: 250px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 0.6fr repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.lap-lists {
+  list-style: none;
+  color: rgb(21, 21, 21);
+  font-weight: 600;
+}
+
+#lap-lists1,
+#lap-lists2 {
+  color: rgb(87, 84, 84);
+}
+
+#lap-lists2 li::before {
+  content: "+";
+  margin-right: 4px;
+  font-weight: 400;
+}
+
+.lap-lists li {
+  margin-bottom: 0.8rem;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(109, 109, 109);
+    background-size: 400%;
+  }
+
+  .stopwatch {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .time-section {
+    padding: 1rem;
+    order: 1;
+  }
+
+  .lap-container {
+    order: 2;
+  }
+
+  .btn-section {
+    order: 3;
+    margin-top: 1rem;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (hover: none) {
+  button {
+    cursor: auto !important;
+  }
+
+  button:active {
+    transform: scale(90%);
+  }
+}
